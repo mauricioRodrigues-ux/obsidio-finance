@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Obsidio Finance</title>
+  <meta name="description" content="Como funciona o Obsidio Finance, app de finanças pessoais com Open Finance criado por Maurício Rodrigues, estudante de Análise e Desenvolvimento de Sistemas.">
+  <meta property="og:title" content="Obsidio Finance">
+  <meta property="og:description" content="O banco manda um extrato confuso. O Obsidio devolve quanto ainda dá para gastar no mês. Veja como ele funciona.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mauriciorodrigues-ux.github.io/obsidio-finance/">
+  <meta property="og:image" content="https://mauriciorodrigues-ux.github.io/obsidio-finance/img/capa.png">
+  <meta name="theme-color" content="#07080a">
+  <link rel="icon" href="img/favicon.png">
+  <link rel="preload" href="fontes/sora.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fontes/geist.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+<header class="heroi">
+  <div class="heroi-fundo" aria-hidden="true"></div>
+  <svg class="fratura" viewBox="0 0 1440 260" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+    <polygon class="f-base" points="0,0 1440,0 1440,214 1320,178 1190,226 1012,160 842,232 668,170 486,240 318,186 160,248 0,196"/>
+    <polygon class="f-1" points="120,84 318,186 470,70 300,18"/>
+    <polygon class="f-2" points="0,196 160,248 318,186 120,84 0,110"/>
+    <polygon class="f-1" points="318,186 486,240 668,170 470,70"/>
+    <polygon class="f-2" points="470,70 668,170 812,48 640,6"/>
+    <polygon class="f-3" points="668,170 842,232 1012,160 812,48"/>
+    <polygon class="f-1" points="812,48 1012,160 1128,62 960,8"/>
+    <polygon class="f-2" points="1012,160 1190,226 1320,178 1128,62"/>
+    <polygon class="f-1" points="1128,62 1320,178 1440,214 1440,70 1280,14"/>
+  </svg>
+
+  <div class="heroi-dentro">
+    <nav class="topo" aria-label="Autor">
+      <img class="logo" src="img/logo-obsidio.png" alt="Obsidio Finance" width="370" height="398">
+      <p class="autor">
+        <span>Maurício Rodrigues</span>
+        <a href="https://github.com/mauricioRodrigues-ux">GitHub</a>
+        <a href="https://www.linkedin.com/in/maur%C3%ADcio-rodrigues-03147231b/">LinkedIn</a>
+      </p>
+    </nav>
+
+    <h1><span>O banco manda um extrato confuso.</span> <span>O Obsidio devolve quanto ainda dá para gastar no mês.</span></h1>
+
+    <div class="abertura">
+      <p>App de finanças pessoais que conecta as contas bancárias por Open Finance, separa cada gasto por categoria e avisa antes de o mês apertar. Está no ar desde outubro de 2026, em uso real por mim e por pessoas que convidei.</p>
+      <p>Criei o Obsidio enquanto estudo Análise e Desenvolvimento de Sistemas na Unisinos. Esta página explica como ele funciona.</p>
+    </div>
+
+    <div class="vitrine">
+      <img class="pc" src="img/pc-inicio.webp" width="2000" height="1250" alt="Tela inicial do Obsidio no computador, com patrimônio, metas, o que entrou e saiu no mês e a previsão até o dia 30.">
+      <img class="cel" src="img/cel-inicio.webp" width="780" height="1688" alt="Tela inicial do Obsidio no celular, com patrimônio, folga até o fim do mês e gráfico.">
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section class="faixa" aria-labelledby="t-faz">
+    <div class="faixa-texto">
+      <h2 id="t-faz">O que ele faz</h2>
+      <p>A tela inicial responde uma pergunta: quanto ainda dá para gastar até o fim do mês, já contando cartão, contas fixas e metas. As outras telas sustentam essa resposta.</p>
+      <p class="aviso">Todas as imagens são do app de verdade, com o Lucas, um usuário inventado para demonstração. Nenhum dado real aparece nesta página.</p>
+    </div>
+
+    <div class="galeria" tabindex="0" role="region" aria-label="Telas do app">
+      <figure>
+        <img loading="lazy" src="img/cel-transacoes.webp" width="780" height="1688" alt="Lista de transações com categoria já preenchida em cada linha.">
+        <figcaption><b>Transações</b> Contas e cartões em uma lista só, com a categoria já preenchida. Um toque muda a categoria, anota ou cria uma regra.</figcaption>
+      </figure>
+      <figure>
+        <img loading="lazy" src="img/cel-pendentes.webp" width="780" height="1688" alt="Um Pix sem explicação, com o campo O que foi e opções de categoria.">
+        <figcaption><b>Pendentes</b> O que o banco não explica, como um Pix para uma pessoa, espera aqui até você dizer o que foi. A resposta pode virar regra.</figcaption>
+      </figure>
+      <figure>
+        <img loading="lazy" src="img/cel-cartao.webp" width="780" height="1688" alt="Limite disponível, fatura aberta com compras e faturas fechadas.">
+        <figcaption><b>Cartão</b> Fatura aberta, limite e faturas fechadas. A compra conta no mês em que foi feita, e pagar a fatura não conta como gasto de novo.</figcaption>
+      </figure>
+      <figure>
+        <img loading="lazy" src="img/cel-planejamento.webp" width="780" height="1688" alt="Meta de reserva de emergência com barra de progresso e valor por mês.">
+        <figcaption><b>Planejamento</b> Toda meta tem prazo. O app calcula quanto guardar por mês e avisa quando o ritmo não chega lá.</figcaption>
+      </figure>
+      <figure>
+        <img loading="lazy" src="img/cel-investimentos.webp" width="780" height="1688" alt="Total investido, quanto dá para sacar e onde está o dinheiro.">
+        <figcaption><b>Investimentos</b> Quanto foi aplicado, quanto vale hoje e quanto dá para sacar agora, já descontados imposto e carência.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="secao" aria-labelledby="t-como">
+    <div class="secao-lado">
+      <h2 id="t-como">Do banco até a tela</h2>
+      <p>A mesma base de regras roda em dois lugares: no meu notebook, com Node e SQLite, e na nuvem, em Cloudflare Workers.</p>
+      <p>As telas são em React 19 com TypeScript e podem ser instaladas no celular.</p>
+    </div>
+
+    <ol class="fluxo">
+      <li class="no">
+        <h3>Bancos</h3>
+        <p>Itaú, Nubank e outros. Liberam dado novo uma vez por dia.</p>
+        <p class="elo">Open Finance, com autorização da própria pessoa</p>
+      </li>
+      <li class="no">
+        <h3>Pluggy</h3>
+        <p>Serviço que fala com os bancos. Cada pessoa usa as próprias chaves, guardadas cifradas.</p>
+        <p class="elo">A cada 12 horas para quem está usando, e na hora se o dado tiver mais de 6 horas quando o app abre</p>
+      </li>
+      <li>
+        <div class="nuvem">
+        <h3>Cloudflare, no plano grátis</h3>
+        <div class="no no-escuro">
+          <h4>Worker</h4>
+          <p>Confere o login do Google, o convite e a sessão assinada. Manda cada pessoa para o espaço dela.</p>
+        </div>
+        <ul class="espacos">
+          <li><h4>Espaço de uma pessoa</h4><p>SQLite próprio, com categorias, regras e metas.</p></li>
+          <li><h4>Espaço de outra</h4><p>Outro banco de dados, sem ligação com o primeiro.</p></li>
+          <li><h4>Cadastro</h4><p>E-mail, nome e foto. Não enxerga nada financeiro.</p></li>
+          <li><h4>Cópias no R2</h4><p>Uma por dia, cifradas, guardadas por 14 dias.</p></li>
+        </ul>
+        </div>
+        <p class="elo">Só o que a tela pede. A resposta fica guardada até algo mudar</p>
+      </li>
+      <li class="no">
+        <h3>Tela</h3>
+        <p>O mesmo app no celular e no computador.</p>
+      </li>
+    </ol>
+  </section>
+
+  <section class="secao" aria-labelledby="t-siga">
+    <div class="secao-lado">
+      <h2 id="t-siga">Siga uma transação</h2>
+      <p>Cada transação passa por quatro perguntas, sempre nesta ordem, e para na primeira que souber responder.</p>
+      <p>Uma categoria escolhida à mão nunca é sobrescrita pela próxima leitura dos bancos.</p>
+    </div>
+
+    <div class="siga" id="siga">
+      <div class="siga-escolha" role="radiogroup" aria-label="Escolha uma transação" id="siga-escolha"></div>
+
+      <div class="siga-banco">
+        <p class="siga-titulo">O que o banco manda</p>
+        <p class="siga-linha"><span id="siga-descricao"></span><span class="siga-valor" id="siga-valor"></span></p>
+        <dl>
+          <div><dt>Quem está do outro lado</dt><dd id="siga-doc"></dd></div>
+          <div><dt>O que a Pluggy informa</dt><dd id="siga-pluggy"></dd></div>
+        </dl>
+      </div>
+
+      <ol class="siga-passos" id="siga-passos"></ol>
+
+      <p class="siga-fim" aria-live="polite"><span>Resultado</span> <b id="siga-resultado"></b> <em id="siga-nota"></em></p>
+      <noscript><p class="siga-fim">Esta parte precisa de JavaScript. A ordem é: regra criada pela pessoa, movimento entre as próprias contas, categoria da Pluggy e, sem nenhuma delas, Pendentes.</p></noscript>
+    </div>
+  </section>
+
+  <section class="secao" aria-labelledby="t-porque">
+    <div class="secao-lado">
+      <h2 id="t-porque">Por que foi feito assim</h2>
+      <p>Seis decisões técnicas e o motivo de cada uma.</p>
+    </div>
+
+    <div class="decisoes">
+      <article>
+        <h3>Um banco de dados por pessoa</h3>
+        <p>Cada pessoa tem um Durable Object com o próprio SQLite. Não existe tabela compartilhada em que um filtro esquecido mostre o dado de outra pessoa.</p>
+      </article>
+      <article>
+        <h3>Regra de dinheiro escrita uma vez</h3>
+        <p>O Obsidio nasceu no notebook, com Node e SQLite. Na ida para a nuvem, uma camada fina passou a simular o Express e o banco dentro do Worker. As mesmas rotas e regras rodam nos dois lugares.</p>
+      </article>
+      <article>
+        <h3>PIN conferido no servidor</h3>
+        <p>O banco guarda só um resumo do PIN, com PBKDF2 e sal, e por cima um HMAC com uma chave que fica fora dele. Uma cópia do banco sozinha não permite testar os PINs possíveis. No quinto erro seguido, somando todos os aparelhos, o PIN cai e a pessoa sai.</p>
+      </article>
+      <article>
+        <h3>Plano grátis como requisito</h3>
+        <p>A Cloudflare dá 5 milhões de linhas lidas por dia para o app inteiro. Por isso cada tela guarda a última resposta: a segunda abertura do Início caiu de umas 8 mil linhas para menos de 10. Cada pessoa tem um teto de 500 mil por dia, e uma conta com problema não derruba as outras.</p>
+      </article>
+      <article>
+        <h3>Publicar passa por uma conferência</h3>
+        <p>São 271 testes automatizados, concentrados nas regras de dinheiro. Antes de cada publicação, um script sobe o sistema com dados temporários, abre cada tela duas vezes e bloqueia o envio se alguma falhar ou passar do orçamento de linhas. O banco evoluiu por 25 migrações versionadas, cada uma com caminho de volta.</p>
+      </article>
+      <article>
+        <h3>A IA do app vê pouco</h3>
+        <p>A tela Consultora responde perguntas sobre o mês usando o Claude. Ela recebe totais e nomes de empresas, nunca nome de pessoa nem documento.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="secao" aria-labelledby="t-melhorias">
+    <div class="secao-lado">
+      <h2 id="t-melhorias">Como ele vem melhorando</h2>
+      <p>O app muda conforme é usado: foram 103 commits entre 16 de outubro e 8 de novembro de 2026. Estas são as melhorias que mais pesaram.</p>
+    </div>
+
+    <ol class="historia">
+      <li>
+        <time datetime="2026-10-16">16 de outubro</time>
+        <h3>Do notebook para a nuvem</h3>
+        <p>O Obsidio rodava só no meu notebook. Passou a funcionar online, com login do Google, convites e um banco de dados separado para cada pessoa. Foi o que permitiu outras pessoas usarem o app.</p>
+      </li>
+      <li>
+        <time datetime="2026-10-16">16 de outubro</time>
+        <h3>Avisos no celular e previsão do mês</h3>
+        <p>O app passou a ser instalável e a avisar sozinho sobre limite, meta e salário, mesmo fechado. O Início ganhou a previsão de como o mês vai terminar, ainda com tempo de mudar o rumo.</p>
+      </li>
+      <li>
+        <time datetime="2026-10-17">17 de outubro</time>
+        <h3>Memória das telas</h3>
+        <p>Cada tela passou a guardar a última resposta e só volta ao banco quando algo muda. Foi a mudança que tornou possível manter o app no plano grátis.</p>
+      </li>
+      <li>
+        <time datetime="2026-10-18">18 de outubro</time>
+        <h3>Uma conta só para quanto dá para gastar</h3>
+        <p>O valor por dia e a folga do mês passaram a sair da mesma conta: saldo de hoje, menos cartão, contas fixas e metas, mais o que ainda deve entrar. O Início também passou a abrir, com um toque, de onde veio a variação do patrimônio.</p>
+      </li>
+      <li>
+        <time datetime="2026-10-19">19 de outubro</time>
+        <h3>Cópia de segurança todo dia</h3>
+        <p>Cada pessoa ganhou uma cópia diária do próprio espaço, cifrada e guardada por 14 dias em um armazenamento separado.</p>
+      </li>
+      <li>
+        <time datetime="2026-11-03">3 de novembro</time>
+        <h3>Conta paga em conjunto</h3>
+        <p>Para quem paga uma cobrança inteira e recebe a parte dos outros por Pix. O app reconhece o Pix de cada pessoa, desconta do gasto sem contar como renda e mostra quem já pagou no mês.</p>
+      </li>
+    </ol>
+  </section>
+
+  <section class="ia" aria-labelledby="t-ia">
+    <h2 id="t-ia">O que foi IA e o que foi meu</h2>
+    <p class="ia-abre">O código do Obsidio foi escrito com o Claude Code. O que este projeto mostra é o que eu decidi, testei e corrigi.</p>
+
+    <div class="ia-lados">
+      <div>
+        <h3>O que eu decidi</h3>
+        <ul>
+          <li>O que o app precisa fazer, para quem e em que ordem.</li>
+          <li>As regras de negócio. Meta sem prazo é sonho, então o prazo é obrigatório. Devolução é uma categoria própria, separada de estorno.</li>
+          <li>O que sai. O desbloqueio por digital foi retirado porque, no navegador do computador, virava o PIN do Windows.</li>
+          <li>Custo zero como condição para o projeto existir.</li>
+          <li>Trocar o nome do produto ao descobrir que Nexa Finance já era uma fintech ativa.</li>
+          <li>Testar cada versão em uso real e aprovar antes de publicar.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>O que a IA fez</h3>
+        <ul>
+          <li>Escreveu a maior parte do código, dos testes e das migrações.</li>
+          <li>Propôs a arquitetura e as alternativas, que eu aprovei ou recusei.</li>
+          <li>Mediu o desempenho das telas e sugeriu melhorias.</li>
+          <li>Revisou texto, contraste e acessibilidade das telas.</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="ia-fecha">Estou no começo da graduação e ainda tenho noções de JavaScript, SQL e Git. Este projeto é como estou aprendendo: para decidir o que aprovar, preciso entender o que foi feito. É isso que quero aprofundar em um estágio, principalmente em backend.</p>
+  </section>
+
+</main>
+
+<footer class="rodape">
+  <p>Obsidio Finance é um projeto pessoal, com acesso por convite. O código fica em repositório privado porque o app lida com dados bancários de pessoas reais. Em uma entrevista, posso mostrar o app funcionando.</p>
+  <p class="rodape-links">
+    <span>Maurício Rodrigues</span>
+    <a href="https://github.com/mauricioRodrigues-ux">GitHub</a>
+    <a href="https://www.linkedin.com/in/maur%C3%ADcio-rodrigues-03147231b/">LinkedIn</a>
+  </p>
+</footer>
+
+<script src="siga.js"></script>
+</body>
+</html>
